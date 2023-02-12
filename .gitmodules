@@ -1,0 +1,3 @@
+[submodule "WatawaeEngine"]
+	path = WatawaeEngine
+	url = https://github.com/JustinCockrell1/WatawaeEngine
