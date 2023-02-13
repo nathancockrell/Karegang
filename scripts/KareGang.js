@@ -17,16 +17,37 @@ export default class KareGang extends Game {
     }
 
     mouseDown(mouseX, mouseY) {
-        this.gangster.vx = mouseX - this.gangster.x;
-        this.gangster.vy = mouseY - this.gangster.y;
+        const diffX = mouseX - this.gangster.x;
+        const diffY = mouseY - this.gangster.y;
 
-        const distance = (this.gangster.vx*this.gangster.vx) + (this.gangster.vy*this.gangster*vy);
+        const distance =Math.sqrt((diffX*diffX) + (diffY*diffY));
 
-        this.gangster.vx/=distance;
-        this.gangster.vy/=distance;
+        this.gangster.vx = (diffX / distance)*5;
+        this.gangster.vy = (diffY / distance)*5;
     }
 
     tick(elapsedTime) {
+
+        if(this.keys["w"]===true) {
+            this.gangster.ay = -10;
+        }
+        else if(this.keys["s"]===true) {
+            this.gangster.ay = 10;
+        }
+        else {
+            this.gangster.ay = 0;
+        }
+
+        if(this.keys["a"]===true) {
+            this.gangster.ax = -10;
+        }
+        else if(this.keys["d"]===true) {
+            this.gangster.ax = 10;
+        }
+        else {
+            this.gangster.ax = 0;
+        }
+
         this.gangster.tick(elapsedTime);
     }
 
