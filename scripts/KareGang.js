@@ -1,5 +1,7 @@
 import Game from "../WatawaeEngine/Game.js";
 import Gangster from "./Gangster.js";
+import Animation from "./Animation.js";
+import Wall from "./Wall.js";
 
 export default class KareGang extends Game {
 
@@ -7,6 +9,7 @@ export default class KareGang extends Game {
         super(ctx);
 
         this.gangster = new Gangster(3, 3, 0.1,0.1);
+        // this.wall = new Wall();
     }
 
     update(elapsedTime) {
@@ -32,6 +35,7 @@ export default class KareGang extends Game {
 
     render() {
         this.ctx.fillStyle = "white";
+        // this.wall.render(this.ctx, this.unitSize);
         this.ctx.fillRect(0,0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.gangster.render(this.ctx, this.unitSize);
     }
