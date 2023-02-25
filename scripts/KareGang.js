@@ -20,8 +20,8 @@ export default class KareGang extends Game {
         // this.wall = new Wall();
 
 
-        Graphics.add("gangsterLeft", "./assets/images/gangster left (shotgun).png");
-        Graphics.add("gangsterRight", "./assets/images/gangster right (shotgun).png");
+        Graphics.add("gangsterLeft", "./assets/images/player1LeftShotgun.png");
+        Graphics.add("gangsterRight", "./assets/images/player1RightShotgun.png");
         Graphics.add("wall","./assets/images/wall.png");
     }
 
