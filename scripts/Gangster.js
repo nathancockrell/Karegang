@@ -6,18 +6,23 @@ export default class Gangster extends PhysicsObject2D {
         super(x, y, vx, vy);
         this.w = 1;
         this.h = 1;
+        this.graphic = "gangsterRight";
+    }
+
+
+    afterTick(elapsedTime) {
+        if(this.ax<0) 
+        this.graphic = "gangsterLeft";
+        else
+        this.graphic = "gangsterRight";
     }
 
     render(ctx, unitSize) {
         // ctx.fillStyle = "blue";
         // ctx.fillRect(this.x*unitSize, this.y*unitSize, this.w*unitSize, this.h*unitSize);
-
-
-
-
-        if(this.ax<0) 
-        ctx.drawImage(Graphics.get("gangsterLeft"), this.x*unitSize, this.y*unitSize, this.w*unitSize, this.h*unitSize);
-        else 
-        ctx.drawImage(Graphics.get("gangsterRight"), this.x*unitSize, this.y*unitSize, this.w*unitSize, this.h*unitSize);
+   
+        
+        ctx.drawImage(Graphics.get(this.graphic), this.x*unitSize, this.y*unitSize, this.w*unitSize, this.h*unitSize);
     }
+
 }
