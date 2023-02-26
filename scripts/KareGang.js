@@ -21,6 +21,10 @@ export default class KareGang extends Game {
 
         Graphics.add("gangsterLeft", "./assets/images/player1LeftShotgun.png");
         Graphics.add("gangsterRight", "./assets/images/player1RightShotgun.png");
+        Graphics.add("karen1Left", "./assets/images/karen1Left.png");
+        Graphics.add("karen1LeftWalk", "./assets/images/karen1LeftWalk.png");
+        Graphics.add("karen1Right", "./assets/images/karen1Right.png");
+        Graphics.add("karen1RightWalk", "./assets/images/karen1RightWalk.png");
         // Graphics.add("wall","./assets/images/wall.png");
         Graphics.add("grass", "./assets/images/grassTiles.png");
         Graphics.add("wall", "./assets/images/wallTiles.png");
@@ -91,7 +95,7 @@ export default class KareGang extends Game {
     }
 
     render() {
-        this.ctx.fillStyle = "white";
+        this.ctx.fillStyle = "black";
         // this.wall.render(this.ctx, this.unitSize);
         this.ctx.fillRect(0,0, this.ctx.canvas.width, this.ctx.canvas.height);
 
